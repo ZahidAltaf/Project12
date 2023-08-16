@@ -54,7 +54,7 @@ const Contact = () => {
         <Typography mt={13} mb={3} align="center" variant="h3" component="h2">
           Contact Us
         </Typography>
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <TextField
             id="firstName"
             name="firstName"
