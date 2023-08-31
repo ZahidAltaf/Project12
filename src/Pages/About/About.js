@@ -4,10 +4,24 @@ import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 
 const About = () => {
+  // const NavbarItems = [
+  //   {
+  //     label: "Home",
+  //     link: "/",
+  //   },
+  //   {
+  //     label: "Products",
+  //     link: "/products",
+  //   },
+  //   {
+  //     label: "About",
+  //     link: "/about",
+  //   },
+  // ];
   return (
     <>
       <Navbar />
-      <div className='container'>
+      <div className="container">
         <div className="row">
           <div className="containers col-lg-12 col-md-12 pb-5">
             <div className="pic" />
@@ -24,14 +38,14 @@ const About = () => {
             </div>
           </div>
           <div className="content col-md-offset-6 col-lg-offset-6">
-            <center className='mt-5 pt-5'>
+            <center className="mt-5 pt-5">
               <h1 className="contentHead">ABOUT ME</h1>
             </center>
             <h2>
               Hi Folks, <br />
               <br />
-              This is Shaik Maqsood.  jus came up with
-              this concept of having a 45 background.
+              This is Shaik Maqsood. jus came up with this concept of having a
+              45 background.
               <br />
               <br />
               Can't belive that it worked.
@@ -42,7 +56,9 @@ const About = () => {
               <br />
               <p>(NOTICE: The lady in the PIC is not me, I'm a guy :P)</p>
               <p>
-                <span style={{ textAlign: "right", color: "#000000", fontSize: 18 }}>
+                <span
+                  style={{ textAlign: "right", color: "#000000", fontSize: 18 }}
+                >
                   * No matter what u say, that gal is sorta cute.
                 </span>
               </p>
@@ -52,8 +68,7 @@ const About = () => {
       </div>
       <Footer />
     </>
-
-  )
+  );
 }
 
 export default About

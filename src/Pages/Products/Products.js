@@ -1,32 +1,16 @@
-import React, { useEffect, useState } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { Link} from "react-router-dom";
+import { useApiDataContext } from "../../Context/Context";
 
 const Products = () => {
-  const [productsdata, setProductsData] = useState([]);
-  const fetchData = async () => {
-    try {
-      const response = await fetch("https://dummyjson.com/products");
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      setProductsData(data.products);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-  console.log("productsAPI", productsdata);
-  useEffect(() => {
-    fetchData();
-  }, []);
+const { apiData } = useApiDataContext();
   return (
     <div>
       <Navbar />
       <div className="container">
         <div className="row">
-          {productsdata?.map((data) => (
+          {apiData?.map((data) => (
             <>
               <div className=" col-md-3 pb-5 mt-5 pt-5">
                 <div className=" card" style={{ width: "18rem" }}>
@@ -48,7 +32,10 @@ const Products = () => {
                     <p className="fw-bolder ">
                       {data?.rating} <i className="fa fa-star text-warning"></i>
                     </p>
-                    <Link to={`/productdetailpage/${data.id}`} className="btn btn-outline-dark">
+                    <Link
+                      to={`/productdetailpage/${data.id}`}
+                      className="btn btn-outline-dark"
+                    >
                       Shop Now
                     </Link>
                   </div>

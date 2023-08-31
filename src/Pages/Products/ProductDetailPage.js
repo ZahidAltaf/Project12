@@ -65,7 +65,9 @@ const ProductDetailPage = () => {
             <h1>
               {productDetail?.brand}
               <span className="pl-2 text-dark">
-                <sup className="text-danger">{cart}</sup>
+                  <i className="fa fa-shopping-cart text-danger">
+                    <sup className="text-danger ">{cart}</sup>
+                  </i>
               </span>
             </h1>
             <h5>

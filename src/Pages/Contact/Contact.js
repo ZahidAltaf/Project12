@@ -35,17 +35,10 @@ const Contact = () => {
   const formik = useFormik({
     validationSchema,
     initialValues,
-    onSubmit: (values) => {
-      console.log("Values:" + values);
+    onSubmit: () => {
+      console.log( "All values:", formik.values);
     },
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-      formik.handleSubmit(e);
-      console.log("All values:", formik.values);
-    
-  };
 
   return (
     <>
@@ -54,7 +47,7 @@ const Contact = () => {
         <Typography mt={13} mb={3} align="center" variant="h3" component="h2">
           Contact Us
         </Typography>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
           <TextField
             id="firstName"
             name="firstName"
